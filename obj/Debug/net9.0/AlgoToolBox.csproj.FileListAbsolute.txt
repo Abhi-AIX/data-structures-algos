@@ -26,3 +26,4 @@
 /Users/abhinavbellamkonda/Desktop/dotnetworkspace/dsa/AlgoToolBox/obj/Debug/net9.0/AlgoToolBox.pdb
 /Users/abhinavbellamkonda/Desktop/dotnetworkspace/dsa/AlgoToolBox/obj/Debug/net9.0/AlgoToolBox.genruntimeconfig.cache
 /Users/abhinavbellamkonda/Desktop/dotnetworkspace/dsa/AlgoToolBox/obj/Debug/net9.0/ref/AlgoToolBox.dll
+/Users/abhinavbellamkonda/Desktop/dotnetworkspace/dsa/AlgoToolBox/obj/Debug/net9.0/AlgoToolBox.sourcelink.json

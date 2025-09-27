@@ -11,3 +11,9 @@ Console.WriteLine($"{string.Join(",", resultArray)}");
 Console.WriteLine();
 Console.WriteLine("Recursion PrintOne:");
 Fundamental.Print();
+
+Console.WriteLine();
+Factorial fc = new Factorial();
+Console.WriteLine(fc.FunctionalRecursion(3));
+Console.WriteLine(fc.ParamerterizedRecursion(4,1));
+
