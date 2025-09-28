@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="900" viewBox="0 0 1000 900">
+  <style>
+    .title { font: 700 22px/1.1 "Segoe UI", Roboto, Arial, sans-serif; fill:#0b3a66 }
+    .label { font: 600 14px/1 "Segoe UI", Roboto, Arial, sans-serif; fill:#0b3a66 }
+    .small { font: 12px "Segoe UI", Roboto, Arial, sans-serif; fill:#172b4d }
+    .box { fill: #ffffff; stroke: #0b3a66; stroke-width: 1px; }
+    .highlight { fill: #e6ffef; stroke: #0a7a44; stroke-width: 1px; }
+    .index { font: 11px "Segoe UI", Roboto, Arial, sans-serif; fill:#0b3a66 }
+    .arrow { stroke: #0b3a66; stroke-width: 1.4px; fill: none; marker-end: url(#arrowhead);} 
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0b3a66" />
+    </marker>
+  </defs>
+
+  <!-- ensure white background so text is readable on dark viewers -->
+  <rect x="0" y="0" width="100%" height="100%" fill="#ffffff" />
+
+  <text x="36" y="40" class="title">Reverse array — recursion steps (visual)</text>
+  <text x="36" y="64" class="small">Function: reverse(A, i, j) — if i &gt;= j return; swap A[i], A[j]; recurse with (i+1, j-1)</text>
+
+  <!-- Example array header -->
+  <text x="36" y="100" class="label">Example: A = [a0, a1, a2, a3, a4, a5] (n = 6)</text>
+
+  <!-- Step 0: initial array -->
+  <g transform="translate(36,120)">
+    <text x="0" y="0" class="small">Step 0: initial (call reverse(A,0,5))</text>
+    <!-- draw array boxes -->
+    <g transform="translate(0,12)">
+      <!-- boxes -->
+      <rect x="0" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="30" y="23" text-anchor="middle" class="small">a0</text>
+      <rect x="72" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="102" y="23" text-anchor="middle" class="small">a1</text>
+      <rect x="144" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="174" y="23" text-anchor="middle" class="small">a2</text>
+      <rect x="216" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="246" y="23" text-anchor="middle" class="small">a3</text>
+      <rect x="288" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="318" y="23" text-anchor="middle" class="small">a4</text>
+      <rect x="360" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="390" y="23" text-anchor="middle" class="small">a5</text>
+      <!-- indices -->
+      <text x="30" y="54" text-anchor="middle" class="index">0</text>
+      <text x="102" y="54" text-anchor="middle" class="index">1</text>
+      <text x="174" y="54" text-anchor="middle" class="index">2</text>
+      <text x="246" y="54" text-anchor="middle" class="index">3</text>
+      <text x="318" y="54" text-anchor="middle" class="index">4</text>
+      <text x="390" y="54" text-anchor="middle" class="index">5</text>
+    </g>
+  </g>
+
+  <!-- Step 1: after swap(0,5) -->
+  <g transform="translate(36,200)">
+    <text x="0" y="0" class="small">Step 1: swap A[0] &lt;-&gt; A[5] (call reverse(A,1,4))</text>
+    <g transform="translate(0,12)">
+      <rect x="0" y="0" width="60" height="36" rx="6" class="highlight" />
+      <text x="30" y="23" text-anchor="middle" class="small">a5</text>
+      <rect x="72" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="102" y="23" text-anchor="middle" class="small">a1</text>
+      <rect x="144" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="174" y="23" text-anchor="middle" class="small">a2</text>
+      <rect x="216" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="246" y="23" text-anchor="middle" class="small">a3</text>
+      <rect x="288" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="318" y="23" text-anchor="middle" class="small">a4</text>
+      <rect x="360" y="0" width="60" height="36" rx="6" class="highlight" />
+      <text x="390" y="23" text-anchor="middle" class="small">a0</text>
+      <!-- indices -->
+      <text x="30" y="54" text-anchor="middle" class="index">0</text>
+      <text x="102" y="54" text-anchor="middle" class="index">1</text>
+      <text x="174" y="54" text-anchor="middle" class="index">2</text>
+      <text x="246" y="54" text-anchor="middle" class="index">3</text>
+      <text x="318" y="54" text-anchor="middle" class="index">4</text>
+      <text x="390" y="54" text-anchor="middle" class="index">5</text>
+    </g>
+  </g>
+
+  <!-- Step 2: after swap(1,4) -->
+  <g transform="translate(36,280)">
+    <text x="0" y="0" class="small">Step 2: swap A[1] &lt;-&gt; A[4] (call reverse(A,2,3))</text>
+    <g transform="translate(0,12)">
+      <rect x="0" y="0" width="60" height="36" rx="6" class="highlight" />
+      <text x="30" y="23" text-anchor="middle" class="small">a5</text>
+      <rect x="72" y="0" width="60" height="36" rx="6" class="highlight" />
+      <text x="102" y="23" text-anchor="middle" class="small">a4</text>
+      <rect x="144" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="174" y="23" text-anchor="middle" class="small">a2</text>
+      <rect x="216" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="246" y="23" text-anchor="middle" class="small">a3</text>
+      <rect x="288" y="0" width="60" height="36" rx="6" class="box" />
+      <text x="318" y="23" text-anchor="middle" class="small">a1</text>
+      <rect x="360" y="0" width="60" height="36" rx="6" class="highlight" />
+      <text x="390" y="23" text-anchor="middle" class="small">a0</text>
+      <!-- indices -->
+      <text x="30" y="54" text-anchor="middle" class="index">0</text>
+      <text x="102" y="54" text-anchor="middle" class="index">1</text>
+      <text x="174" y="54" text-anchor="middle" class="index">2</text>
+      <text x="246" y="54" text-anchor="middle" class="index">3</text>
+      <text x="318" y="54" text-anchor="middle" class="index">4</text>
+      <text x="390" y="54" text-anchor="middle" class="index">5</text>
+    </g>
+  </g>
+
+  <!-- Step 3: after swap(2,3) -->
+  <g transform="translate(36,360)">
+    <text x="0" y="0" class="small">Step 3: swap A[2] &lt;-&gt; A[3] (call reverse(A,3,2) → base)</text>
+    <g transform="translate(0,12)">
+      <rect x="0" y="0" width="60" height="36" rx="6" class="highlight" />
+      <text x="30" y="23" text-anchor="middle" class="small">a5</text>
+      <rect x="72" y="0" width="60" height="36" rx="6" class="highlight" />
+      <text x="102" y="23" text-anchor="middle" class="small">a4</text>
+      <rect x="144" y="0" width="60" height="36" rx="6" class="highlight" />
+      <text x="174" y="23" text-anchor="middle" class="small">a3</text>
+      <rect x="216" y="0" width="60" height="36" rx="6" class="highlight" />
+      <text x="246" y="23" text-anchor="middle" class="small">a2</text>
+      <rect x="288" y="0" width="60" height="36" rx="6" class="highlight" />
+      <text x="318" y="23" text-anchor="middle" class="small">a1</text>
+      <rect x="360" y="0" width="60" height="36" rx="6" class="highlight" />
+      <text x="390" y="23" text-anchor="middle" class="small">a0</text>
+      <!-- indices -->
+      <text x="30" y="54" text-anchor="middle" class="index">0</text>
+      <text x="102" y="54" text-anchor="middle" class="index">1</text>
+      <text x="174" y="54" text-anchor="middle" class="index">2</text>
+      <text x="246" y="54" text-anchor="middle" class="index">3</text>
+      <text x="318" y="54" text-anchor="middle" class="index">4</text>
+      <text x="390" y="54" text-anchor="middle" class="index">5</text>
+    </g>
+  </g>
+
+  <!-- Summary box -->
+  <rect x="36" y="460" width="920" height="160" rx="10" fill="#f8fafc" stroke="#0b3a66" stroke-width="1" />
+  <text x="56" y="492" class="label">Quick summary</text>
+  <text x="56" y="516" class="small">- Each recursive call does one swap (A[i] &lt;-&gt; A[j]) and then calls reverse(A,i+1,j-1).</text>
+  <text x="56" y="536" class="small">- Calls continue until i &gt;= j (base-case). For n=6 we performed 3 swaps (n/2).</text>
+  <text x="56" y="556" class="small">- Time: O(n). Recursion depth: ≈ n/2 (call stack O(n)).</text>
+  <text x="56" y="576" class="small">- Edge cases: n=0 or n=1 → immediate return (no swaps).</text>
+
+  <text x="36" y="640" class="small">Saved as: DivideAndConquer/Recursion/Images/ReverseArrayRecursionTree.svg</text>
+</svg>

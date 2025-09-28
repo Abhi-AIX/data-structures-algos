@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1200" version="1.1">
+  <rect width="1000" height="1200" fill="white"/>
+  
+  <!-- Title Section -->
+  <g transform="translate(0,20)">
+    <rect x="300" y="0" width="400" height="50" fill="white" stroke="#2d5986" stroke-width="2"/>
+    <text x="500" y="35" font-family="Arial" font-size="24" text-anchor="middle" fill="#2d5986" font-weight="bold">
+      Karatsuba Algorithm Visualization
+    </text>
+  </g>
+
+  <!-- Overview Section -->
+  <g transform="translate(50,90)">
+    <rect width="900" height="70" fill="white" stroke="#666666" stroke-width="1"/>
+    <text x="20" y="30" font-family="Arial" font-size="14" fill="#333333">
+      Overview: Karatsuba algorithm is a fast multiplication algorithm that reduces the multiplication
+    </text>
+    <text x="20" y="50" font-family="Arial" font-size="14" fill="#333333">
+      of two n-digit numbers to three multiplications of n/2-digit numbers, plus some additions and shifts.
+    </text>
+  </g>
+
+  <!-- Example Section -->
+  <g transform="translate(50,180)">
+    <rect width="900" height="460" fill="white" stroke="#666666" stroke-width="1"/>
+    <text x="20" y="30" font-family="Arial" font-size="18" fill="#2d5986" font-weight="bold">
+      Detailed Example: 1234 × 5678
+    </text>
+    
+    <!-- Step 1 -->
+    <g transform="translate(20,50)">
+      <rect width="860" height="100" fill="#f8f9fa" stroke="#666666" stroke-width="1"/>
+      <text x="10" y="30" font-family="Arial" font-size="14" fill="#333333" font-weight="bold">Step 1: Split the numbers</text>
+      <text x="30" y="60" font-family="Arial" font-size="14">1234 = 12 × 10² + 34    (a = 12, b = 34)</text>
+      <text x="30" y="80" font-family="Arial" font-size="14">5678 = 56 × 10² + 78    (c = 56, d = 78)</text>
+    </g>
+
+    <!-- Step 2 -->
+    <g transform="translate(20,170)">
+      <rect width="860" height="140" fill="#f8f9fa" stroke="#666666" stroke-width="1"/>
+      <text x="10" y="30" font-family="Arial" font-size="14" fill="#333333" font-weight="bold">Step 2: Calculate Products</text>
+      <text x="30" y="60" font-family="Arial" font-size="14">z₂ = ac = 12 × 56 = 672</text>
+      <text x="30" y="80" font-family="Arial" font-size="14">z₀ = bd = 34 × 78 = 2652</text>
+      <text x="30" y="100" font-family="Arial" font-size="14">z₁ = (a+b)(c+d) - ac - bd = 2840</text>
+      <text x="30" y="120" font-family="Arial" font-size="14">(46 × 134) - 672 - 2652 = 6164 - 672 - 2652 = 2840</text>
+    </g>
+
+    <!-- Step 3 -->
+    <g transform="translate(20,330)">
+      <rect width="860" height="110" fill="#f8f9fa" stroke="#666666" stroke-width="1"/>
+      <text x="10" y="30" font-family="Arial" font-size="14" fill="#333333" font-weight="bold">Step 3: Combine Results</text>
+      <text x="30" y="60" font-family="Arial" font-size="14">Result = z₂ × 10⁴ + z₁ × 10² + z₀</text>
+      <text x="30" y="80" font-family="Arial" font-size="14">= 672 × 10000 + 2840 × 100 + 2652</text>
+      <text x="30" y="100" font-family="Arial" font-size="14">= 6720000 + 284000 + 2652 = 7006652</text>
+    </g>
+  </g>
+
+  <!-- Applications Section -->
+  <g transform="translate(50,660)">
+    <rect width="900" height="200" fill="white" stroke="#666666" stroke-width="1"/>
+    <text x="20" y="40" font-family="Arial" font-size="18" fill="#2d5986" font-weight="bold">Real-world Applications</text>
+    <text x="40" y="80" font-family="Arial" font-size="14">1. Cryptography: Large number multiplication in RSA encryption</text>
+    <text x="40" y="110" font-family="Arial" font-size="14">2. Digital Signal Processing: Fast convolution operations</text>
+    <text x="40" y="140" font-family="Arial" font-size="14">3. Scientific Computing: Matrix multiplication optimization</text>
+    <text x="40" y="170" font-family="Arial" font-size="14">4. Big Integer Libraries: Implementation in programming languages</text>
+  </g>
+
+  <!-- Complexity Section -->
+  <g transform="translate(50,880)">
+    <rect width="900" height="150" fill="white" stroke="#666666" stroke-width="1"/>
+    <text x="20" y="40" font-family="Arial" font-size="18" fill="#2d5986" font-weight="bold">Complexity Analysis</text>
+    <text x="40" y="80" font-family="Arial" font-size="14">• Time Complexity: O(n^log₂3) ≈ O(n^1.585)</text>
+    <text x="40" y="110" font-family="Arial" font-size="14">• Better than classical multiplication O(n²) for large numbers</text>
+    <text x="40" y="140" font-family="Arial" font-size="14">• Space Complexity: O(n) for recursive call stack</text>
+  </g>
+
+  <!-- Implementation Note -->
+  <g transform="translate(50,1050)">
+    <rect width="900" height="100" fill="#f8f9fa" stroke="#666666" stroke-width="1"/>
+    <text x="20" y="40" font-family="Arial" font-size="16" fill="#2d5986" font-weight="bold">Implementation Note:</text>
+    <text x="40" y="70" font-family="Arial" font-size="14">The algorithm becomes more efficient than traditional multiplication for very large numbers.</text>
+    <text x="40" y="90" font-family="Arial" font-size="14">Modern implementations use a hybrid approach based on input size.</text>
+  </g>
+</svg>
