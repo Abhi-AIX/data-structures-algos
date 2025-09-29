@@ -25,10 +25,6 @@ Welcome to my personal Data Structures and Algorithms (DSA) learning repository 
    - Utility functions
    - Shared code components
 
-#### 🧪 Tests/
-- Mirror structure of Solutions/
-- Unit tests for validation
-
 #### 🖼️ Assets/
 - Supporting materials
 - Algorithm visualizations
@@ -40,14 +36,13 @@ Welcome to my personal Data Structures and Algorithms (DSA) learning repository 
    - Master core DSA concepts
    - Enhance problem-solving abilities
    - Create reusable algorithm library
-   - Practice Test-Driven Development
 
 ## 💡 How I Use This Repository
 
 - **Active Development**: Continuously adding and refining algorithms
 - **Testing Ground**: Using `Program.cs` for quick experiments
 - **Organized Solutions**: Maintaining structured code in `Solutions/`
-- **Quality Assurance**: Writing thorough unit tests
+
 
 ## 📝 Note on Contributing
 

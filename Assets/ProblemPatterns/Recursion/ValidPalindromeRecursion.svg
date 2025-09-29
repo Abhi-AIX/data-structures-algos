@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="-220 0 1440 900" overflow="visible" preserveAspectRatio="xMidYMid meet">
+  <rect x="-220" y="0" width="1440" height="900" fill="#ffffff"/>
+  <style>
+    .box { fill:#f5f5f5; stroke:#666; stroke-width:1.5; rx:10; ry:10; }
+    .match { fill:#eaf6ff; stroke:#1976d2; }
+    .mismatch { fill:#ffecec; stroke:#d32f2f; }
+    .base { fill:#f8ecff; stroke:#7b1fa2; }
+    .text-main { font:14px "Segoe UI", Roboto, Arial, sans-serif; fill:#111; dominant-baseline:middle; text-anchor:middle; }
+    .text-small { font:12px "Segoe UI", Roboto, Arial, sans-serif; fill:#1976d2; text-anchor:middle; }
+    .edge { stroke:#666; stroke-width:2; fill:none; }
+    .legend-text { font:12px "Segoe UI", Roboto, Arial, sans-serif; fill:#222; }
+  </style>
+
+  <!-- Root -->
+  <g transform="translate(510,60)">
+    <rect class="box match" x="-140" y="-36" width="280" height="72"/>
+    <text class="text-main" x="0" y="-6">
+      <tspan x="0">isPalindrome(i = 0, j = n-1)</tspan>
+      <tspan x="0" dy="20" class="text-small">compare s[0] and s[n-1]</tspan>
+    </text>
+  </g>
+
+  <!-- Level 1 (children) -->
+  <g transform="translate(200,260)">
+    <rect class="box match" x="-140" y="-36" width="280" height="72"/>
+    <text class="text-main" x="0" y="-6">
+      <tspan x="0">isPalindrome(i = 1, j = n-2)</tspan>
+      <tspan x="0" dy="20" class="text-small">s[0] == s[n-1] branch</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(820,260)">
+    <rect class="box mismatch" x="-140" y="-36" width="280" height="72"/>
+    <text class="text-main" x="0" y="-6">return false</text>
+  </g>
+
+  <!-- Level 2 (children of left branch) -->
+  <g transform="translate(60,460)">
+    <rect class="box match" x="-140" y="-36" width="280" height="72"/>
+    <text class="text-main" x="0" y="-6">
+      <tspan x="0">isPalindrome(i = 2, j = n-3)</tspan>
+      <tspan x="0" dy="20" class="text-small">s[1] == s[n-2] branch</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(340,460)">
+    <rect class="box mismatch" x="-140" y="-36" width="280" height="72"/>
+    <text class="text-main" x="0" y="-6">return false</text>
+  </g>
+
+  <!-- Level 3 (leftmost path) -->
+  <g transform="translate(60,660)">
+    <rect class="box match" x="-140" y="-36" width="280" height="72"/>
+    <text class="text-main" x="0" y="-6">
+      <tspan x="0">isPalindrome(i = 3, j = n-4)</tspan>
+      <tspan x="0" dy="20" class="text-small">continue inward</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(60,820)">
+    <rect class="box base" x="-200" y="-30" width="400" height="60"/>
+    <text class="text-main" x="0" y="-6">Base case: i &gt;= j → return true</text>
+  </g>
+
+  <!-- Edges (clear, not crossing nodes) -->
+  <!-- root -> level1 -->
+  <path class="edge" d="M510,96 C360,150 300,200 200,224" />
+  <path class="edge" d="M510,96 C700,150 760,200 820,224" />
+  <text class="text-small" x="355" y="180">s[0] == s[n-1]</text>
+  <text class="text-small" x="665" y="180">s[0] != s[n-1]</text>
+
+  <!-- level1(left) -> level2 -->
+  <path class="edge" d="M200,292 C170,340 120,380 60,424" />
+  <path class="edge" d="M200,292 C240,340 300,380 340,424" />
+  <text class="text-small" x="150" y="360">s[1] == s[n-2]</text>
+  <text class="text-small" x="280" y="360">s[1] != s[n-2]</text>
+
+  <!-- level2 -> level3 (leftmost) -->
+  <path class="edge" d="M60,496 C60,540 60,580 60,624" />
+  <text class="text-small" x="120" y="560">s[2] == s[n-3]</text>
+
+  <!-- level3 -> base -->
+  <path class="edge" d="M60,696 L60,740" />
+
+  <!-- compact mismatch connectors (removed) -->
+
+  <!-- Legend with clear spacing -->
+  <rect x="880" y="520" width="280" height="220" rx="8" ry="8" fill="#ffffff" stroke="#bbb"/>
+  <text class="legend-text" x="900" y="548">Legend</text>
+
+  <rect x="900" y="570" width="24" height="24" class="box match" />
+  <text class="legend-text" x="934" y="588">Recursive call (match)</text>
+
+  <rect x="900" y="610" width="24" height="24" class="box mismatch" />
+  <text class="legend-text" x="934" y="628">Return false (mismatch)</text>
+
+  <rect x="900" y="650" width="24" height="24" class="box base" />
+  <text class="legend-text" x="934" y="668">Base case → true</text>
+
+  <!-- Notes removed as requested -->
+</svg>

@@ -1,4 +1,5 @@
-class Fundamental
+// Visual for this example is available at: Assets/FundamentalRecursion.svg
+class FundamentalRecursion
 {
     //This function never ends because of no base case written.
     // public static void PrintOne()

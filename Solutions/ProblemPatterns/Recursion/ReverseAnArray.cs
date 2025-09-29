@@ -1,6 +1,7 @@
+// Visual for this example is available at: Assets/ReverseArray.svg
 public class ReverseAnArray
 {
-    public void ReverseArray(int[] arr, int l, int r)
+    public void ReverseArrayTwoPointer(int[] arr, int l, int r)
     {
         if (l >= r)
         {
@@ -12,7 +13,22 @@ public class ReverseAnArray
         arr[l] = arr[r];
         arr[r] = temp;
 
-        ReverseArray(arr, l + 1, r - 1);
+        ReverseArrayTwoPointer(arr, l + 1, r - 1);
+    }
+
+    public void ReverseArrayOnePointer(int[] arr, int n, int i)
+    {
+        if (i >= n/2)
+        {
+            PrintArray(arr);
+            return;
+        }
+
+        int temp = arr[i];
+        arr[i] = arr[(n-i)-1];
+        arr[(n-i)-1] = temp;
+
+        ReverseArrayOnePointer(arr,i+1,n);
     }
 
 
