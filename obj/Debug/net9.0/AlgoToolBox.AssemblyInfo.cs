@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlgoToolBox")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c59b755ac105db3b8624dccfbe498f039fd7993e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9c7b39b4724879255c74501fb3696be3dfb7f8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlgoToolBox")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlgoToolBox")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" preserveAspectRatio="xMidYMid meet" overflow="visible" style="overflow: visible;">
+  <style>
+    .bg { fill:#ffffff }
+    .panel { fill:#f7fbff; stroke:#dbefff; stroke-width:1 }
+    .frame { fill:#ffffff; stroke:#cfd8dc; stroke-width:1 }
+    .cell { fill:#ffffff; stroke:#37474f; stroke-width:1 }
+    .cell-swap { fill:#fff3e0; stroke:#fb8c00; stroke-width:1.5 }
+    .title { font:18px "Segoe UI", Roboto, Arial; fill:#102027 }
+    .sub { font:13px "Segoe UI", Roboto, Arial; fill:#37474f }
+    .val { font:16px "Segoe UI", Roboto, Arial; fill:#0d47a1; font-weight:700 }
+    .idx { font:12px "Segoe UI", Roboto, Arial; fill:#455a64 }
+    .box-label { font:12px "Segoe UI", Roboto, Arial; fill:#263238 }
+    .arrow { stroke:#607d8b; stroke-width:2; fill:none; marker-end:url(#a) }
+    .muted { fill:#607d8b }
+  </style>
+
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0 0 L10 3.5 L0 7 z" fill="#607d8b"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="900" height="520" />
+
+  <text x="20" y="28" class="title">ReverseArrayTwoPointerBackTracking — example: arr1 = {5,4,2,1}</text>
+  <text x="20" y="48" class="sub">Call chain descends, base reached, then swaps happen while unwinding (backtracking).</text>
+
+  <!-- initial array -->
+  <g transform="translate(20,72)">
+    <rect x="0" y="0" width="860" height="60" class="panel" rx="8" />
+    <text class="box-label" x="12" y="20">Initial array (before recursion)</text>
+    <g transform="translate(18,30)">
+      <g transform="translate(0,0)">
+        <rect class="cell" x="0" y="0" width="160" height="38" rx="6" />
+        <text class="idx" x="12" y="14">i:0</text>
+        <text class="val" x="80" y="28" text-anchor="middle">5</text>
+      </g>
+      <g transform="translate(170,0)">
+        <rect class="cell" x="0" y="0" width="160" height="38" rx="6" />
+        <text class="idx" x="12" y="14">i:1</text>
+        <text class="val" x="80" y="28" text-anchor="middle">4</text>
+      </g>
+      <g transform="translate(340,0)">
+        <rect class="cell" x="0" y="0" width="160" height="38" rx="6" />
+        <text class="idx" x="12" y="14">i:2</text>
+        <text class="val" x="80" y="28" text-anchor="middle">2</text>
+      </g>
+      <g transform="translate(510,0)">
+        <rect class="cell" x="0" y="0" width="160" height="38" rx="6" />
+        <text class="idx" x="12" y="14">i:3</text>
+        <text class="val" x="80" y="28" text-anchor="middle">1</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- left: call stack -->
+  <g transform="translate(20,160)">
+    <text class="box-label" x="0" y="0">Call stack (top → bottom: recursive descent)</text>
+    <g transform="translate(0,12)">
+      <g>
+        <rect class="frame" x="0" y="8" width="220" height="48" rx="6" />
+        <text class="sub" x="12" y="36">Call: l=0, r=3</text>
+      </g>
+      <g transform="translate(0,64)">
+        <rect class="frame" x="0" y="8" width="220" height="48" rx="6" />
+        <text class="sub" x="12" y="36">Call: l=1, r=2</text>
+      </g>
+      <g transform="translate(0,128)">
+        <rect class="frame" x="0" y="8" width="220" height="48" rx="6" />
+        <text class="sub" x="12" y="36">Call: l=2, r=1 — base reached → return</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- right: backtracking swaps -->
+  <g transform="translate(260,160)">
+    <text class="box-label" x="0" y="0">Backtracking (swaps while unwinding)</text>
+
+    <!-- step 1: swap arr[1] & arr[2] -->
+    <g transform="translate(0,18)">
+      <rect x="0" y="8" width="620" height="68" rx="6" class="panel" />
+      <text class="sub" x="12" y="34">After returning from base: swap arr[1] &amp; arr[2]</text>
+      <g transform="translate(12,36)">
+        <g transform="translate(0,0)">
+          <rect class="cell" x="0" y="0" width="120" height="38" rx="6" />
+          <text class="val" x="60" y="25" text-anchor="middle">5</text>
+        </g>
+        <g transform="translate(140,0)">
+          <rect class="cell-swap" x="0" y="0" width="120" height="38" rx="6" />
+          <text class="val" x="60" y="25" text-anchor="middle">2</text>
+        </g>
+        <g transform="translate(280,0)">
+          <rect class="cell-swap" x="0" y="0" width="120" height="38" rx="6" />
+          <text class="val" x="60" y="25" text-anchor="middle">4</text>
+        </g>
+        <g transform="translate(420,0)">
+          <rect class="cell" x="0" y="0" width="120" height="38" rx="6" />
+          <text class="val" x="60" y="25" text-anchor="middle">1</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- arrow -->
+    <path class="arrow" d="M310,120 L310,150" />
+
+    <!-- step 2: swap arr[0] & arr[3] -->
+    <g transform="translate(0,160)">
+      <rect x="0" y="8" width="620" height="68" rx="6" class="panel" />
+      <text class="sub" x="12" y="34">Next: swap arr[0] &amp; arr[3] → final reversed array</text>
+      <g transform="translate(12,36)">
+        <g transform="translate(0,0)">
+          <rect class="cell-swap" x="0" y="0" width="120" height="38" rx="6" />
+          <text class="val" x="60" y="25" text-anchor="middle">1</text>
+        </g>
+        <g transform="translate(140,0)">
+          <rect class="cell" x="0" y="0" width="120" height="38" rx="6" />
+          <text class="val" x="60" y="25" text-anchor="middle">2</text>
+        </g>
+        <g transform="translate(280,0)">
+          <rect class="cell" x="0" y="0" width="120" height="38" rx="6" />
+          <text class="val" x="60" y="25" text-anchor="middle">4</text>
+        </g>
+        <g transform="translate(420,0)">
+          <rect class="cell-swap" x="0" y="0" width="120" height="38" rx="6" />
+          <text class="val" x="60" y="25" text-anchor="middle">5</text>
+        </g>
+      </g>
+    </g>
+
+    <text class="sub muted" x="330" y="296">Swaps occur after returning from deeper calls — typical backtracking</text>
+  </g>
+
+</svg>
