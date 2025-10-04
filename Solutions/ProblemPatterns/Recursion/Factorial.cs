@@ -1,4 +1,4 @@
-// Visual for this example is available at: Assets/Factorail.svg
+// Visual for this example is available at: /Assets/ProblemPatterns/Recursion/Factoril.svg
 class Factorial
 {
     //Parameterized recursion

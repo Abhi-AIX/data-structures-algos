@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="931" height="466" viewBox="0 0 931 466">
+<rect x="0" y="0" width="931" height="466" fill="#ffffff"/>
+<style>
+  .node { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; font-size: 11px; }
+  .nlabel { dominant-baseline: middle; text-anchor: middle; }
+  .edge { stroke: #111; stroke-width: 1.4; }
+  .edge-dashed { stroke: #777; stroke-dasharray: 6 5; stroke-width: 1.2; }
+  .box { fill: #fff; stroke: #111; stroke-width: 1.2; rx: 5; }
+  .box-grey { fill: #f4f4f4; stroke: #999; stroke-width: 1.0; rx: 5; }
+  .title { font: 600 13px ui-sans-serif, system-ui }
+  .small { font: 11px ui-sans-serif, system-ui }
+</style>
+<text x="14" y="20" class="title">printAnySubsequence sum==k</text>
+<text x="14" y="36" class="small">example: nums=[1,2,1], k=2; include-first, short-circuit on first match</text>
+<line class="edge" x1="509.25" y1="106" x2="220.5" y2="146"/>
+<text class="small" x="364.875" y="122.0" text-anchor="middle">+1</text>
+<line class="edge" x1="220.5" y1="178" x2="83.0" y2="218"/>
+<text class="small" x="151.75" y="194.0" text-anchor="middle">+2</text>
+<line class="edge" x1="83.0" y1="250" x2="28" y2="290"/>
+<text class="small" x="55.5" y="266.0" text-anchor="middle">+1</text>
+<line class="edge" x1="83.0" y1="250" x2="138" y2="290"/>
+<text class="small" x="110.5" y="266.0" text-anchor="middle">skip</text>
+<line class="edge" x1="220.5" y1="178" x2="358.0" y2="218"/>
+<text class="small" x="289.25" y="194.0" text-anchor="middle">skip</text>
+<line class="edge" x1="358.0" y1="250" x2="248" y2="290"/>
+<text class="small" x="303.0" y="266.0" text-anchor="middle">+1</text>
+<line class="edge-dashed" x1="358.0" y1="250" x2="468" y2="290"/>
+<text class="small" x="413.0" y="266.0" text-anchor="middle">skip</text>
+<line class="edge-dashed" x1="509.25" y1="106" x2="798" y2="146"/>
+<text class="small" x="653.625" y="122.0" text-anchor="middle">skip</text>
+<rect class="box" x="449.25" y="76" width="120" height="28" />
+<text class="node nlabel" x="509.25" y="90">i0, s0, S=[]</text>
+<rect class="box" x="160.5" y="148" width="120" height="28" />
+<text class="node nlabel" x="220.5" y="162">i1, s1, S=[1]</text>
+<rect class="box" x="23.0" y="220" width="120" height="28" />
+<text class="node nlabel" x="83.0" y="234">i2, s3, S=[1, 2]</text>
+<rect class="box" x="-37.0" y="292" width="130" height="28" />
+<text class="node nlabel" x="28" y="306">i3, s4, S=[1, 2, 1]</text>
+<rect class="box" x="78.0" y="292" width="120" height="28" />
+<text class="node nlabel" x="138" y="306">i3, s3, S=[1, 2]</text>
+<rect class="box" x="298.0" y="220" width="120" height="28" />
+<text class="node nlabel" x="358.0" y="234">i2, s1, S=[1]</text>
+<rect class="box" x="188.0" y="292" width="120" height="28" />
+<text class="node nlabel" x="248" y="306">i3, s2, S=[1, 1]</text>
+<rect class="box-grey" x="408.0" y="292" width="120" height="28" />
+<text class="node nlabel" x="468" y="306">i3, s1, S=[1]</text>
+<rect class="box-grey" x="738.0" y="148" width="120" height="28" />
+<text class="node nlabel" x="798" y="162">i1, s0, S=[]</text>
+<text x="248" y="330" class="small" text-anchor="middle">match ✔ return true</text>
+</svg>

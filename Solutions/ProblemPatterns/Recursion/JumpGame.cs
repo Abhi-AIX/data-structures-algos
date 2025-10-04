@@ -1,4 +1,4 @@
-// Visual for this example is available at: Assets/JumpGame.svg
+// Visual for this example is available at: Assets/ProblemPattens/Recursion/JumpGame.svg
 
 class JumpGame
 {

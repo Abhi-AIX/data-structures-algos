@@ -1,4 +1,4 @@
-// Visual for this example is available at: Assets/FundamentalRecursion.svg
+// Visual for this example is available at: /Assets/ProblemPatterns/Recursion/FundamentalRecursion.svg
 class FundamentalRecursion
 {
     //This function never ends because of no base case written.

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1086" height="860" viewBox="0 0 1086 860">
+<style>
+  .node { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; font-size: 13px; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 12px; }
+  .nlabel { dominant-baseline: middle; text-anchor: middle; }
+  .edge { stroke: #111; stroke-width: 1.6; }
+  .box { fill: #fff; stroke: #111; stroke-width: 1.6; rx: 6; }
+  .elabel { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; font-size: 11px; fill: #111; }
+  .title { font: 600 16px ui-sans-serif, system-ui }
+  .small { font: 12px ui-sans-serif, system-ui }
+</style>
+<rect x="0" y="0" width="1086" height="860" fill="#ffffff" />
+<text x="20" y="36" class="title">Subsequences with sum == k (nums = {1, 2}, k=2)</text>
+<rect class="box" x="20" y="64" width="900" height="68" />
+<text x="30" y="88" class="small">n = nums.Length; base case: index == n</text>
+<text x="30" y="108" class="mono">if (index == n) { if (sum == k) result.Add(new List&lt;int&gt;(subset)); return; }</text>
+<line class="edge" x1="240.0" y1="370" x2="120" y2="460"/>
+<text class="elabel" x="180.0" y="409.0" text-anchor="middle">include 2 → sum+=2</text>
+<line class="edge" x1="240.0" y1="370" x2="360" y2="460"/>
+<text class="elabel" x="300.0" y="409.0" text-anchor="middle">exclude → sum stays</text>
+<line class="edge" x1="720.0" y1="370" x2="600" y2="460"/>
+<text class="elabel" x="660.0" y="409.0" text-anchor="middle">include 2 → sum+=2</text>
+<line class="edge" x1="720.0" y1="370" x2="840" y2="460"/>
+<text class="elabel" x="780.0" y="409.0" text-anchor="middle">exclude → sum stays</text>
+<line class="edge" x1="480.0" y1="240" x2="240.0" y2="330"/>
+<text class="elabel" x="360.0" y="279.0" text-anchor="middle">include 1 → sum+=1</text>
+<line class="edge" x1="480.0" y1="240" x2="720.0" y2="330"/>
+<text class="elabel" x="600.0" y="279.0" text-anchor="middle">exclude → sum stays</text>
+<rect class="box" x="414.0" y="198" width="132" height="44" />
+<text class="node nlabel" x="480.0" y="220">i=0, sum=0, S=[]</text>
+<rect class="box" x="175.0" y="328" width="130" height="44" />
+<text class="node nlabel" x="240.0" y="350">sum=1, S=[1]</text>
+<rect class="box" x="55.0" y="458" width="130" height="44" />
+<text class="node nlabel" x="120" y="480">sum=3, S=[1, 2]</text>
+<rect class="box" x="295.0" y="458" width="130" height="44" />
+<text class="node nlabel" x="360" y="480">sum=1, S=[1]</text>
+<rect class="box" x="655.0" y="328" width="130" height="44" />
+<text class="node nlabel" x="720.0" y="350">sum=0, S=[]</text>
+<rect class="box" x="535.0" y="458" width="130" height="44" />
+<text class="node nlabel" x="600" y="480">sum=2, S=[2]</text>
+<rect class="box" x="775.0" y="458" width="130" height="44" />
+<text class="node nlabel" x="840" y="480">sum=0, S=[]</text>
+<rect class="box" x="20" y="720" width="1046" height="120" />
+<text x="30" y="742" class="title">Output (sum == k)</text>
+<text x="32" y="770" class="small">• [2]</text>
+</svg>

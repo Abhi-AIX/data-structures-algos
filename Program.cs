@@ -41,3 +41,44 @@ ValidPalindrome vd = new ValidPalindrome();
 vd.s = vd.s.Replace("[^a-zA-Z0-9]", "").ToLower();
 Console.WriteLine(vd.ValidPalindromeRecursive(0, vd.s));
 
+
+Console.WriteLine();
+Console.WriteLine("\nRecursion Print All Subsequences:");
+PrintAllSubsequnces pas = new PrintAllSubsequnces();
+
+int[] nums = { 1, 2, 3 };
+var subsequences = pas.PrintAllSubSequences(nums); // e.g. List<List<int>> or IEnumerable<IEnumerable<int>>
+
+foreach (var seq in subsequences)
+{
+    Console.WriteLine("[" + string.Join(", ", seq) + "]");
+}
+
+Console.WriteLine();
+Console.WriteLine("\nRecursion Print All Subsequences Whose sum is K:");
+PrintAllSubsequncesSumIsK pask = new PrintAllSubsequncesSumIsK();
+
+int[] nums1 = { 1, 2, 1 };
+var subseqencesSumIsK = pask.PrintAllSubSequencesSumIsK(nums1, 2);
+
+foreach (var seq in subseqencesSumIsK)
+{
+    Console.WriteLine("[" + string.Join(", ", seq) + "]");
+}
+
+
+Console.WriteLine();
+Console.WriteLine("\nRecursion Print Any Subsequences Whose sum is K:");
+
+PrintAnySubsequenceSumIsK asq = new PrintAnySubsequenceSumIsK();
+var anySubseqencesSumIsK = asq.PrintAnySubSequencesSumIsK(nums1, 2);
+
+foreach (var seq in anySubseqencesSumIsK)
+{
+    Console.WriteLine("[" + string.Join(", ", seq) + "]");
+}
+
+Console.WriteLine();
+Console.WriteLine("\nRecursion Count All Subsequences Whose sum is K:");
+CountAllSubSequencesSumIsK cas = new CountAllSubSequencesSumIsK();
+Console.WriteLine(cas.CountAllSubsequencesSumIsK(nums1,2));
